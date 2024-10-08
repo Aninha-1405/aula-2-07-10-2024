@@ -1,0 +1,152 @@
+https://www.hostinger.com.br/tutoriais/como-criar-um-menu-suspenso-css-simples-2
+
+CSS
+maio 17, 2023
+
+Carlos E.
+
+3min de leitura
+
+Como Criar Um Menu Suspenso HTML usando CSS
+Como Criar Um Menu Suspenso HTML usando CSS
+A experiência do usuário e o tempo de carregamento do site são críticos. É por isso que você não deve carregar seu site com JavaScript adicional ou imagens grandes. Mas o que fazer se você quiser ter um bom olhar CSS dropdown menu? Não há necessidade de usar JavaScript para isso, hoje drop down efeito pode ser criado usando apenas CSS. Neste tutorial você aprenderá como é simples criar um menu suspenso CSS.
+
+Baixe o Guia de Recursos CSS Completo
+
+Tutorial em Vídeo
+
+Passo 1.  Crie um Arquivo HTML em Branco
+A primeira coisa é criar um arquivo HTML para o seu menu.
+
+No seu hPanel, selecione Gerenciador de Arquivos na seção Arquivos.
+Clique em Ir para o Gerenciador de Arquivo → public_html.
+Selecione o botão New File (Novo Arquivo) e crie um arquivo chamado menu.html.
+Criação de um novo arquivo no Hostinger File Manager
+Agora que você criou o arquivo menu.html, é hora de gerar a sintexe do menu.
+
+Passo 2. Adicione o Código do Menu HTML
+Aqui, vamos criar um botão de menu que consiste de um menu principal (menu pai) e cinco sub-menus (menus filhos). Você pode linkar cada sub-menu com diferentes páginas no seu site.
+
+Abra o menu.html e adicione a seguinte sintaxe:
+
+<div class="dropdown">
+  <button class="mainmenubtn">Main Menu</button>
+  <div class="dropdown-child">
+    <a href="http://wwww.seudominio.com/pagina1.html">Sub Menu 1</a>
+    <a href="http://wwww.seudominio.com/pagina2.html">Sub Menu 2</a>
+    <a href="http://wwww.seudominio.com/pagina3.html">Sub Menu 3</a>
+    <a href="http://wwww.seudominio.com/pagina4.html">Sub Menu 4</a>
+    <a href="http://wwww.seudominio.com/pagina5.html">Sub Menu 5</a>
+  </div>
+</div>
+Você pode notar que cada elemento tem classes diferentes — dropdown, mainmenubtn e dropdown-child. Essas classes são necessárias para aplicar diferentes regras CSS no próximo passo.
+
+É assim que o menu HTML fica sem quaisquer regras de CSS:
+
+Plain menu
+Não se esqueça de mudar a URL do menu dentro do atributo href com a URL das páginas do seu site, e nem de renomear os menus.
+
+Etapa 3 – Aplique o CSS e Crie o Efeito de Dropdown
+Como você pode ver, o menu HTML simples não é atraente. Então agora vamos colorir o botão do menu e criar um efeito de dropdown. Estilize o código HTML ao colocar as seguintes regras CSS em cima do código anterior:
+
+.mainmenubtn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+}
+.mainmenubtn:hover {
+    background-color: blue;
+    }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: skyblue;
+    min-width: 200px;
+}
+.dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+Sinta-se livre para experimentar com o CSS ao mudar as cores e os tamanhos para se adequar às suas necessidades.
+
+O documento menu.html final deverá ficar parecido com esse:
+
+<html>
+<head>
+<style>
+.mainmenubtn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+}
+.mainmenubtn:hover {
+    background-color: blue;
+    }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: skyblue;
+    min-width: 200px;
+}
+.dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+</style>
+</head>
+<body>
+<div class="dropdown">
+  <button class="mainmenubtn">Main Menu</button>
+  <div class="dropdown-child">
+    <a href="http://wwww.yourdomain.com/page1.html">Sub Menu 1</a>
+    <a href="http://wwww.yourdomain.com/page2.html">Sub Menu 2</a>
+    <a href="http://wwww.yourdomain.com/page3.html">Sub Menu 3</a>
+    <a href="http://wwww.yourdomain.com/page4.html">Sub Menu 4</a>
+    <a href="http://wwww.yourdomain.com/page5.html">Sub Menu 5</a>
+  </div>
+</div>
+</body>
+</html>
+Neste exemplo, os estilos de CSS estão posicionados no mesmo arquivo HTML (stylesheet interna). Contudo, você pode criar um arquivo CSS separado e linká-lo com quaisquer documentos HTML.
+
+Assim que você tiver terminado, salve e baixe o arquivo. Você verá isso aqui quando abri-lo em seu navegador:
+
+prévia do menu suspenso feito em html
+Como Inserir o Menu Suspenso no seu Tema
+Para exibir o menu suspenso, você precisará anexar o documento HTML no template do seu tema usando a função readfile(). Para isso, execute esses passos no seu Gerenciador de Arquivos:
+
+Na pasta public_html, vá até wp_content -> themes. Então, acesse a sua pasta de temas que está em uso.
+Aqui, você vai colocar o menu no cabeçalho. Abra o arquivo header.php e cole a seguinte sintaxe na parte inferior do conteúdo do arquivo. <?php // do php stuff readfile('menu.html'); ?>
+Salve suas alterações e feche o documento.
+Recarregue o seu site e você verá que o menu suspenso já está aplicado nele.
+
+menu suspenso aplicado no site
+Você pode criar um arquivo menu.html no seu computador de maneira local e então fazer upload dele para a sua conta de hospedagem usando um cliente FTP ou o Notepad++. Então, insira o arquivo no seu tema atual com a sintaxe acima.
+
+
+Conclusão
+Um menu suspenso é essencial para se ter um site organizado. A maneira mais fácil de criá-lo é usando regras de CSS num arquivo HTML. Você pode criá-lo a partir do Gerenciador de Arquivos no seu hPanel e inseri-lo no tema atual usando a função PHP readfile().
+
+Incentivamos que você experimente com essa funcionalidade!
